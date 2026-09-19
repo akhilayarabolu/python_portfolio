@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-grid"></div>
+    <div class="container">
+        <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+                <p class="hero-kicker fade-up">Available for internships and entry-level roles</p>
+                <h1 class="hero-title fade-up delay-1">Hi, I'm {{ site_name }}</h1>
+                <p class="hero-role fade-up delay-2">Python Developer</p>
+                <p class="hero-text fade-up delay-3">Passionate about Python development, data analysis, problem solving, and building practical solutions.</p>
+                <div class="hero-actions fade-up delay-4">
+                    <a class="btn btn-accent" href="{% url 'projects' %}">View My Projects</a>
+                    <a class="btn btn-outline-light" href="{% url 'download_resume' %}">Download Resume</a>
+                    <a class="btn btn-ghost" href="{% url 'contact' %}">Contact Me</a>
+                </div>
+                <div class="hero-meta fade-up delay-5">
+                    <span><i class="bi bi-geo-alt"></i> {{ site_location }}</span>
+                    <span><i class="bi bi-mortarboard"></i> B.Tech CSE, GMRIT</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="code-window fade-up delay-2" aria-hidden="true">
+                    <div class="code-window-bar">
+                        <span></span><span></span><span></span>
+                        <small>akhila.py</small>
+                    </div>
+                    <pre><code><span class="kw">class</span> <span class="cls">Developer</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self):
+        self.name = <span class="st">"Y. Akhila"</span>
+        self.role = <span class="st">"Python Developer"</span>
+        self.skills = [
+            <span class="st">"Python"</span>, <span class="st">"SQL"</span>, <span class="st">"Django"</span>,
+            <span class="st">"Power BI"</span>, <span class="st">"Excel"</span>
+        ]
+
+    <span class="kw">def</span> <span class="fn">build</span>(self):
+        <span class="kw">return</span> <span class="st">"Practical solutions"</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Overview</p>
+            <h2>What I do</h2>
+            <p>I combine Python development with data analysis to turn ideas into useful, well-structured solutions.</p>
+        </div>
+        <div class="row g-4">
+            {% include "includes/services.html" %}
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2>Featured projects</h2>
+        </div>
+        <div class="row g-4">
+            {% for project in featured_projects %}
+                <div class="col-md-6 col-lg-4">
+                    {% include "includes/project_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p>Projects will appear here after you add them in Django admin.</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a class="btn btn-accent" href="{% url 'projects' %}">See all projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta-banner">
+            <div>
+                <h2>Let’s build something useful.</h2>
+                <p class="mb-0">Open to Python Developer and Data Analyst internships or fresher roles.</p>
+            </div>
+            <a class="btn btn-accent" href="{% url 'contact' %}">Get in touch</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

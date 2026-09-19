@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h1>Selected work</h1>
+        <p class="lead-text">Academic and personal projects in Python, Django, SQL, and data analysis. Update GitHub and live links from Django admin.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            {% for project in projects %}
+                <div class="col-md-6">
+                    {% include "includes/project_card.html" %}
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <article class="content-card">
+                        <h2>No projects yet</h2>
+                        <p class="mb-0">Add projects in the Django admin so they appear here automatically.</p>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

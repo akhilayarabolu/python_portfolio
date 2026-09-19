@@ -1,0 +1,23 @@
+<article class="project-card h-100">
+    <div class="project-top">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.short_description }}</p>
+    </div>
+    <p class="project-body">{{ project.description }}</p>
+    <div class="skill-tags">
+        {% for tech in project.tech_list %}
+            <span>{{ tech }}</span>
+        {% endfor %}
+    </div>
+    <div class="project-links">
+        {% if project.github_url %}
+            <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+        {% endif %}
+        {% if project.live_url %}
+            <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right"></i> Live demo</a>
+        {% endif %}
+        {% if not project.github_url and not project.live_url %}
+            <span class="muted">Links can be added in Django admin.</span>
+        {% endif %}
+    </div>
+</article>

@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">About</p>
+        <h1>A focused start in Python and data</h1>
+        <p class="lead-text">Fresher Python Developer and Data Analyst from Ongole, building practical skills through projects, analysis, and clean web applications.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-7">
+                <article class="content-card">
+                    <h2>Professional summary</h2>
+                    <p>
+                        I am {{ site_name }}, a B.Tech Computer Science and Engineering student at GMRIT with a strong interest in
+                        Python development and data analysis. I enjoy turning raw information into clear insights and building
+                        simple, reliable applications that solve real problems.
+                    </p>
+                    <p>
+                        My technical foundation includes Python, SQL, Django, Power BI, Excel, Tableau, Pandas, and NumPy.
+                        I also practice core machine learning ideas such as regression, classification, and decision trees using Scikit-learn.
+                        I learn quickly, communicate clearly, and work well in a team.
+                    </p>
+                    <p class="mb-0">
+                        I am looking for an internship or entry-level role where I can contribute, grow, and apply Python,
+                        databases, and analytics to practical business needs.
+                    </p>
+                </article>
+            </div>
+            <div class="col-lg-5">
+                <article class="content-card highlight-card">
+                    <h2>Education</h2>
+                    <p class="mb-1 fw-semibold">B.Tech in Computer Science and Engineering</p>
+                    <p class="mb-2">GMR Institute of Technology (GMRIT)</p>
+                    <p class="muted mb-0"><i class="bi bi-geo-alt"></i> {{ site_location }}</p>
+                </article>
+                <article class="content-card mt-4">
+                    <h2>Career objective</h2>
+                    <p class="mb-0">
+                        To begin my career as a Python Developer or Data Analyst, contribute to meaningful projects,
+                        and keep improving through hands-on work, collaboration, and continuous learning.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <article class="content-card h-100">
+                    <h2>Technical skills</h2>
+                    <ul class="clean-list">
+                        <li>Python, SQL, and Java</li>
+                        <li>Django, HTML, CSS, and JavaScript</li>
+                        <li>Excel, Power BI, Tableau, Pandas, and NumPy</li>
+                        <li>Scikit-learn, regression, classification, and decision trees</li>
+                        <li>MySQL, PostgreSQL, Git, GitHub, and VS Code</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="content-card h-100">
+                    <h2>Soft skills</h2>
+                    <ul class="clean-list">
+                        <li>Problem solving with a structured approach</li>
+                        <li>Quick learning and adaptability</li>
+                        <li>Clear written and verbal communication</li>
+                        <li>Teamwork and willingness to take feedback</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

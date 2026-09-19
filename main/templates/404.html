@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <article class="content-card text-center error-card">
+            <p class="eyebrow">404</p>
+            <h1>Page not found</h1>
+            <p class="lead-text">The page you requested does not exist. It may have been moved, or the link may be incorrect.</p>
+            <a class="btn btn-accent" href="{% url 'home' %}">Back to Home</a>
+        </article>
+    </div>
+</section>
+{% endblock %}

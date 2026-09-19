@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h1>Tools I use to build and analyze</h1>
+        <p class="lead-text">A practical mix of programming, web development, analytics, databases, and collaboration tools.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            {% for group in skill_groups %}
+            <div class="col-md-6 col-lg-4">
+                <article class="skill-card h-100">
+                    <div class="skill-icon"><i class="bi {{ group.icon }}"></i></div>
+                    <h2>{{ group.title }}</h2>
+                    <div class="skill-tags">
+                        {% for item in group.items %}
+                            <span>{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

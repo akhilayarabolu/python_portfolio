@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <p class="eyebrow">Resume</p>
+        <h1>Education, skills, and experience</h1>
+        <p class="lead-text">A concise snapshot of my background. Add a PDF at <code>main/static/files/{{ resume_file_name }}</code> to enable download.</p>
+        <a class="btn btn-accent mt-2" href="{% url 'download_resume' %}">Download Resume</a>
+        {% if not resume_available %}
+            <p class="resume-note mt-3 mb-0">PDF not uploaded yet. The resume content below is still available on this page.</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <article class="content-card">
+                    <h2>Education</h2>
+                    <p class="fw-semibold mb-1">B.Tech, Computer Science and Engineering</p>
+                    <p class="mb-1">GMR Institute of Technology (GMRIT)</p>
+                    <p class="muted mb-0">{{ site_location }}</p>
+                </article>
+                <article class="content-card mt-4">
+                    <h2>Soft skills</h2>
+                    <ul class="clean-list mb-0">
+                        <li>Problem solving</li>
+                        <li>Quick learning</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="col-lg-8">
+                <article class="content-card">
+                    <h2>Technical skills</h2>
+                    <p><strong>Programming:</strong> Python, SQL, Java</p>
+                    <p><strong>Web:</strong> Django, HTML, CSS, JavaScript</p>
+                    <p><strong>Analytics:</strong> Excel, Power BI, Tableau, Pandas, NumPy</p>
+                    <p><strong>Machine Learning:</strong> Scikit-learn, Regression, Classification, Decision Trees</p>
+                    <p><strong>Database:</strong> MySQL, PostgreSQL</p>
+                    <p class="mb-0"><strong>Tools:</strong> Git, GitHub, VS Code</p>
+                </article>
+                <article class="content-card mt-4">
+                    <h2>Projects</h2>
+                    <ul class="resume-projects">
+                        <li>
+                            <strong>Personal Portfolio Website</strong>
+                            — Django portfolio with contact form, project listings, and production deployment setup.
+                        </li>
+                        <li>
+                            <strong>Sales Insights Dashboard</strong>
+                            — Power BI dashboard for KPIs, trends, and regional performance.
+                        </li>
+                        <li>
+                            <strong>Student Performance Analysis</strong>
+                            — Python analysis using Pandas and NumPy to find patterns in academic data.
+                        </li>
+                        <li>
+                            <strong>Library Management System</strong>
+                            — Django CRUD application for books, members, and issue/return records.
+                        </li>
+                    </ul>
+                </article>
+                <article class="content-card mt-4">
+                    <h2>Certifications / achievements</h2>
+                    <p class="muted">Add your certificates here by editing <code>main/templates/resume.html</code>, or list them after you complete courses.</p>
+                    <ul class="clean-list mb-0">
+                        <li>Coursework and self-learning in Python, SQL, and data visualization</li>
+                        <li>Hands-on practice with Django web development and Power BI dashboards</li>
+                        <li>Academic project work in data analysis and web applications</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
